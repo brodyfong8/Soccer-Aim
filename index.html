@@ -482,12 +482,7 @@ var LANG = "en";
   }
 </style>
 
-<div id="ad-container" aria-hidden="false" role="dialog" aria-label="Advertisement" style="display: block;">
-  <iframe id="ad-iframe" src="https://script.google.com/macros/s/AKfycbwO0_-Mbrs-AoE1MqbBxyaIzK385M7xGx4jDkq-FDsbR9wNcqft1m3554Np5XINfbRViw/exec" width="768px" height="95px" scrolling="no" frameborder="0" sandbox="allow-scripts allow-popups allow-same-origin"></iframe>
-  <button id="close-ad" disabled="">Close (1)</button>
-  <div id="ad-right-mask"></div>
-</div>
-
+<div id="ad-container" aria-hidden="false" role="dialog" aria-label="Advertisement" 
 <script>
   (function () {
     const showDelay = 2000; // 2 seconds delay before first show
@@ -496,11 +491,7 @@ var LANG = "en";
     const adContainer = document.getElementById('ad-container');
     const closeBtn = document.getElementById('close-ad');
 
-    function showAd() {
-      // Show ad with smooth slide-in
-      adContainer.style.display = 'block';
-      adContainer.classList.remove('hidden');
-      adContainer.setAttribute('aria-hidden', 'false');
+
 
       // Start countdown
       let timeLeft = countdownStart;
@@ -521,17 +512,7 @@ var LANG = "en";
       }, 1000);
     }
 
-    // Initial ad show
-    setTimeout(showAd, showDelay);
 
-    // Close with animation and schedule reappearance
-    closeBtn.addEventListener('click', () => {
-      if (closeBtn.disabled) return;
-      adContainer.classList.add('hidden');
-      adContainer.setAttribute('aria-hidden', 'true');
-      // Schedule reappearance without removing or reloading iframe
-      setTimeout(showAd, reappearDelay);
-    });
   })();
 </script>
 
